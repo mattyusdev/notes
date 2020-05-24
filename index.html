@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Task Board | Notes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Biryani:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container-fluid d-flex align-items-center justify-content-center">
+        <form>
+            <h1>My Task Board</h1>
+            <hr>
+            <div class="notebookframe">
+                <div class="notebooktop">
+                    <label for="formDesc">Task Description:<span>*</span></label>
+                    <textarea id="formDesc"></textarea>
+                </div>
+                <div>
+                    <label for="formDate">Deadline Date:<span>*</span></label>
+                    <input id="formDate" type="date" required>
+                </div>
+                <div>
+                    <label for="formTime">Deadline Time: <i class="fa fa-close" id="clearTime"></i></label>
+                    <input id="formTime" type="time" required>
+                </div>
+                <div class="notebook-corner"></div>
+            </div>
+            <button type="button" id="addButton" class="button addbutton">ADD TASK</button>
+            <button type="reset" id="resetbutton" class="button resetbutton">CLEAR FORM</button>
+        </form>
+    </div>
+
+    <main id="notesBlock" class="row d-flex justify-content-center notesblock">
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>

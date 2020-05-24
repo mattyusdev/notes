@@ -1,0 +1,322 @@
+$colorbackground: #354a5f;
+/***Scrool bar style / CHROME***/
+@media screen and (min-width: 767px) {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.4);
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.6);; 
+    }
+}
+
+body {
+    background: $colorbackground;
+    min-height: 100vh;
+    font-family: 'Biryani';
+    color: #fff;
+}
+
+form {
+    margin-top: 50px;
+    text-align: center;
+
+    h1 {
+        font-weight: bold;
+        font-size: 48px;
+    }
+
+    hr {
+        width: 150px;
+        border: 0.1em solid #01d4e7;
+    }
+
+    div.notebookframe {
+        position: relative;
+        margin-top: 30px;
+        height: 150px;
+        width: 600px;
+        background-color: #fff;
+        color: #354a5f;
+        font-size: 18px;
+        font-weight: bold;
+
+        div {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            border-top: solid 3px #c2c6ca;
+        }
+
+        div:hover #clearTime {
+            display: initial;
+            font-size: 14px;
+        }
+
+        label {
+            width: 200px;
+            border-right: solid 4px #f08176;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+
+            span {
+                color: #f08176;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+
+            #clearTime {
+                font-size: 0px;
+                margin-left: 8px;
+                margin-bottom: 3px;
+                transition: 0.4s;
+            }
+            
+            #clearTime:hover {
+                opacity: 0.6;
+                cursor: pointer;
+            }
+        }
+
+        input, textarea {
+            resize: none;
+            position: absolute;
+            right: 10px;
+            width: 370px;
+            border: none;
+            height: 40px;
+            text-align: left;
+            padding: 5px;
+        }
+
+        textarea:focus {
+            height: 80px;
+            top: 0;
+            z-index: 2;
+        }
+
+        input[type=date]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            right: 20px;
+        }
+        input::-webkit-inner-spin-button {
+            position: absolute;
+            right: 0;
+        }
+
+        div.notebooktop {
+            border: none;
+        }
+
+        div.notebook-corner {
+            border-left: 30px solid transparent;
+            border-right: 30px solid $colorbackground;
+            border-top: 30px solid transparent;
+            height: 0;
+            width: 0;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+
+    button.button {
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px 20px 7px 20px;
+        margin-top: 30px;
+        transition: 0.7s;
+    }
+
+    button.button:hover {
+        color: $colorbackground;
+        background: #fff;
+    }
+
+    button.addbutton {
+        background: #27ae61;
+        margin-right: 15px;
+    }
+
+    button.resetbutton {
+        background: #e74c3c;
+    }
+}
+
+main.notesblock {
+    margin: 10px 50px 30px 50px;
+    color: #354a5f;
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .animation {
+        animation-name: fade-in;
+        animation-duration: 2s;
+    }
+    
+    div.noteframe {
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        background: #f1c40e;
+        position: relative;
+        margin: 20px;
+
+        i {
+            font-size: 1px;
+            position: absolute;
+            right: 5px;
+            top: 0;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        i:hover {
+            opacity: 0.7;
+        }
+
+        p {
+            width: 100%;
+            height: 250px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 5px;
+        }
+
+        div.notebottom {
+            padding: 15px;
+            width: 100%;
+            height: 50px;
+            background: #ffd403;
+            position: absolute;
+            bottom: 0;
+            font-weight: bold;
+            font-style: italic;
+
+            span {
+                margin-left: 15px;
+            }
+        }
+
+        div.note-corner{
+            border-left: 30px solid transparent;
+            border-right: 30px solid $colorbackground;
+            border-top: 30px solid transparent;
+            height: 0;
+            width: 0;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+        }
+    }
+
+    div.noteframe:hover i {
+        font-size: 30px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+    form {
+        h1 {
+            font-size: 35px;
+        }
+
+        hr {
+            width: 100px;
+        }
+
+        div.notebookframe {
+            height: 120px;
+            width: 300px;
+            font-size: 10px;
+
+            div {
+                height: 40px;
+                border-top-width: 1.5px;
+            }
+    
+            div:hover #clearTime {
+                font-size: 8px;
+            }
+
+            label {
+                width: 100px;
+                border-right-width: 2px;
+                margin-left: 7px;
+
+                span {
+                    font-size: 7px;
+                    margin-left: 2px;
+                }
+
+                #clearTime {
+                    font-size: 8px;
+                    margin-left: 4px;
+                    display: initial;
+                }
+            }
+
+            input, textarea {
+                right: 5px;
+                width: 180px;
+                height: 30px;
+                padding: 2px;
+            }
+
+            textarea:focus {
+                height: 60px;
+            }
+
+            div.notebook-corner {
+                border-left: 20px solid transparent;
+                border-right: 20px solid $colorbackground;
+                border-top: 20px solid transparent;
+            }
+        }
+    }
+
+    main.notesblock {
+        margin: 10px 20px 20px 20px;
+
+        div.noteframe {
+            width: 200px;
+            height: 200px;
+            margin: 15px;
+
+            div.note-corner{
+                border-left: 20px solid transparent;
+                border-right: 20px solid $colorbackground;
+                border-top: 20px solid transparent;
+            }
+        }
+    }
+}
